@@ -1,0 +1,121 @@
+addr,ppos,len,size,name,type,unit,pos,min,max,steps,column,choices,default,expert,hidden,readonly
+0,0,0,16,Firmware Version,STR,,,0,0,0,1,,0,False,False,True
+0,0,16,16,Board,STR,,,0,0,0,1,,0,False,False,True
+0,0,16,16,Name,STR,,,0,0,0,1,,0,False,False,True
+0,2,5,2,Pitch P,SI,,[2;1],0,3000,10,1,,400,False,False,False
+1,1,7,2,Pitch I,UI,,,0,20000,50,1,,1000,False,False,False
+2,4,3,2,Pitch D,UI,,,0,8000,50,1,,500,False,False,False
+3,0,5,2,Pitch Motor Vmax,UI,,,0,255,1,1,,150,False,False,False
+4,1,5,2,Pitch Pan (0 = hold),UI,,,0,50,1,2,,20,False,False,False
+5,1,5,2,Pitch Pan Deadband,UI,,[2;3],0,600,10,1,,0,False,False,False
+6,2,5,2,Roll P,SI,,[3;1],0,3000,10,1,,400,False,False,False
+7,1,7,2,Roll I,UI,,,0,20000,50,1,,1000,False,False,False
+8,4,3,2,Roll D,UI,,,0,8000,50,1,,500,False,False,False
+9,0,5,2,Roll Motor Vmax,UI,,,0,255,1,1,,150,False,False,False
+10,1,5,2,Roll Pan (0 = hold),UI,,,0,50,1,3,,20,False,False,False
+11,1,5,2,Roll Pan Deadband,UI,,[3;3],0,600,10,1,,0,False,False,False
+12,2,5,2,Yaw P,SI,,[4;1],0,3000,10,1,,400,False,False,False
+13,1,7,2,Yaw I,UI,,,0,20000,50,1,,1000,False,False,False
+14,4,3,2,Yaw D,UI,,,0,8000,50,1,,500,False,False,False
+15,0,5,2,Yaw Motor Vmax,UI,,,0,255,1,1,,150,False,False,False
+16,1,5,2,Yaw Pan (0 = hold),UI,,,0,50,1,4,,20,False,False,False
+17,1,5,2,Yaw Pan Deadband,UI,,[4;3],0,100,5,1,,50,False,False,False
+18,0,0,1,Low Voltage Limit,LISTA,,[1;4],0,7,1,1,[ "off"; "2.9 V/cell"; "3.0 V/cell"; "3.1 V/cell"; "3.2 V/cell"; "3.3 V/cell"; "3.4 V/cell"; "3.5 V/cell" ],1,False,False,False
+19,0,7,2,Voltage Correction,UI,%,,0,200,1,1,,0,False,False,False
+20,0,0,2,Pitch Motor Poles,UI,,[2;1],12,28,2,1,,14,False,False,False
+21,0,0,1,Pitch Motor Direction,LISTA,,,0,2,1,1,[ "normal";  "reversed"; "auto" ],2,False,False,False
+22,2,5,2,Pitch Offset,SI,,,-300,300,5,1,,0,False,False,False
+23,0,5,2,Pitch Startup Motor Pos,UI,,,0,1008,1,1,,504,False,False,False
+26,0,0,2,Roll Motor Poles,UI,,[3;1],12,28,2,1,,14,False,False,False
+27,0,0,1,Roll Motor Direction,LISTA,,,0,2,1,1,[ "normal";  "reversed"; "auto" ],2,False,False,False
+28,2,5,2,Roll Offset,SI,,,-300,300,5,1,,0,False,False,False
+29,0,5,2,Roll Startup Motor Pos,UI,,,0,1008,1,1,,504,False,False,False
+32,0,0,2,Yaw Motor Poles,UI,,[4;1],12,28,2,1,,14,False,False,False
+33,0,0,1,Yaw Motor Direction,LISTA,,,0,2,1,1,[ "normal";  "reversed"; "auto"; ],2,False,False,False
+34,2,5,2,Yaw Offset,SI,,,-300,300,5,1,,0,False,False,False
+35,0,5,2,Yaw Startup Motor Pos,UI,,,0,1008,1,1,,504,False,False,False
+38,0,0,1,Imu3 Configuration,LISTA,,,0,2,1,1,[ "none"; "none; Imu2=on-board"; "Imu3 = NT Imu2"; "Imu3 = on-board Imu2" ],0,False,False,False
+39,0,0,1,Imu Orientation,LISTA,,[1;1],0,23,1,1,\@ImuChoicesList,0,False,False,False
+40,0,0,1,Motor Mapping,LISTA,,,0,5,1,3,[ "M0=pitch ; M1=roll";  "M0=roll ; M1=pitch"; "roll yaw pitch"; "yaw roll pitch"; "pitch yaw roll"; "yaw pitch roll"; ],0,False,False,False
+41,0,0,1,Virtual Channel Configuration,LISTA,,,0,10,1,2,[ "off";  "sum ppm 6"; "sum ppm 7"; "sum ppm 8"; "sum ppm 10"; "sum ppm 12";               "spektrum 10 bit"; "spektrum 11 bit"; "sbus"; "hott sumd"; "srxl" ],0,False,False,False
+42,0,0,1,Pwm Out Configuration,LISTA,,,0,2,1,1,[ "off"; "1520 us 55 Hz"; "1520 us 250 Hz" ],0,False,False,False
+43,0,0,2,Rc Dead Band,UI,us,,0,50,1,1,,10,False,False,False
+44,0,0,1,Rc Pitch,LISTA,,,0,42,1,2,\@FunctionInputChoicesList,0,False,False,False
+45,0,0,1,Rc Pitch Mode,LISTA,,,0,2,1,1,[ "absolute"; "relative"; "absolute centered"],0,False,False,False
+46,0,0,2,Rc Pitch Trim,SI,us,[1;4],-100,100,1,1,,0,False,False,False
+47,1,0,2,Rc Pitch Min,SI,,,-1200,1200,5,1,,-250,False,False,False
+48,1,0,2,Rc Pitch Max,SI,,,-1200,1200,5,1,,250,False,False,False
+49,1,0,2,Rc Pitch Speed Limit (0 = off),UI,/s,,0,1000,5,1,,400,False,False,False
+50,3,0,2,Rc Pitch Accel Limit (0 = off),UI,,,0,1000,10,1,,300,False,False,False
+51,0,0,1,Rc Roll,LISTA,,,0,42,1,3,\@FunctionInputChoicesList,0,False,False,False
+52,0,0,1,Rc Roll Mode,LISTA,,,0,2,1,1,[ "absolute"; "relative"; "absolute centered"],0,False,False,False
+53,0,0,2,Rc Roll Trim,SI,us,,-100,100,1,1,,0,False,False,False
+54,1,0,2,Rc Roll Min,SI,,,-450,450,5,1,,-250,False,False,False
+55,1,0,2,Rc Roll Max,SI,,,-450,450,5,1,,250,False,False,False
+56,1,0,2,Rc Roll Speed Limit (0 = off),UI,/s,,0,1000,5,1,,400,False,False,False
+57,3,0,2,Rc Roll Accel Limit (0 = off),UI,,,0,1000,10,1,,300,False,False,False
+58,0,0,1,Rc Yaw,LISTA,,,0,42,1,4,\@FunctionInputChoicesList,0,False,False,False
+59,0,0,1,Rc Yaw Mode,LISTA,,,0,3,1,1,[ "absolute"; "relative"; "absolute centered"; "relative turn around" ]; #"relative slip ring" ],0,False,False,False
+60,0,0,2,Rc Yaw Trim,SI,us,,-100,100,1,1,,0,False,False,False
+61,1,0,2,Rc Yaw Min,SI,,,-2700,2700,10,1,,-250,False,False,False
+62,1,0,2,Rc Yaw Max,SI,,,-2700,2700,10,1,,250,False,False,False
+63,1,0,2,Rc Yaw Speed Limit (0 = off),UI,/s,,0,1000,5,1,,400,False,False,False
+64,3,0,2,Rc Yaw Accel Limit (0 = off),UI,,,0,1000,10,1,,300,False,False,False
+65,0,0,1,Pan Mode Control,LISTA,,,0,42,1,1,\@FunctionInputChoicesList,0,False,False,False
+66,0,0,1,Pan Mode Default Setting,LISTA,,,0,5,1,1,[ "hold hold pan"; "hold hold hold"; "pan pan pan"; "pan hold hold"; "pan hold pan"; "hold pan pan"; "off"],0,False,False,False
+67,0,0,1,Pan Mode Setting #1,LISTA,,,0,6,1,1,[ "hold hold pan"; "hold hold hold"; "pan pan pan"; "pan hold hold"; "pan hold pan"; "hold pan pan"; "off"],1,False,False,False
+68,0,0,1,Pan Mode Setting #2,LISTA,,,0,6,1,1,[ "hold hold pan"; "hold hold hold"; "pan pan pan"; "pan hold hold"; "pan hold pan"; "hold pan pan"; "off"],4,False,False,False
+69,0,0,1,Pan Mode Setting #3,LISTA,,,0,6,1,1,[ "hold hold pan"; "hold hold hold"; "pan pan pan"; "pan hold hold"; "pan hold pan"; "hold pan pan"; "off"],2,False,False,False
+70,0,0,1,Standby,LISTA,,,0,42,1,1,\@FunctionInputChoicesList,0,False,False,False
+71,0,0,1,IR Camera Control,LISTA,,,0,42,1,2,\@FunctionInputChoicesList,0,False,False,False
+72,0,0,1,Camera Model,LISTA,,,0,3,1,1,[ "Sony Nex"; "Canon"; "Panasonic"; "Nikon" ],0,False,False,False
+73,0,0,1,IR Camera Setting #1,LISTA,,,0,2,1,1,[ "shutter"; "shutter delay"; "video on/off" ],0,False,False,False
+74,0,0,1,IR Camera Setting #2,LISTA,,,0,3,1,1,[ "shutter"; "shutter delay"; "video on/off"; "off" ],2,False,False,False
+75,1,0,2,Time Interval (0 = off),UI,s,,0,150,1,1,,0,False,False,False
+76,0,0,1,Re-center Camera,LISTA,,[1;3],0,42,1,1,\@FunctionInputChoicesList,0,False,False,False
+77,0,0,1,NT Logging,LISTA,,,0,7,1,4,[ "off"; "basic"; "basic + pid"; "basic + accgyro"; "basic + accgyro_raw";               "basic + pid + accgyro"; "basic + pid + ag_raw"; "full" ],0,False,False,False
+78,0,0,1,Pitch Motor Usage,LISTA,,,0,3,1,4,[ "normal"; "level"; "startup pos"; "disabled"],3,False,False,False
+79,0,0,1,Roll Motor Usage,LISTA,,,0,3,1,1,[ "normal"; "level"; "startup pos"; "disabled"],3,False,False,False
+80,0,0,1,Yaw Motor Usage,LISTA,,,0,3,1,1,[ "normal"; "level"; "startup pos"; "disabled"],3,False,False,False
+81,2,5,2,Imu AHRS,UI,s,,0,2500,100,1,,1000,False,False,False
+83,0,0,1,Imu3 Orientation,LISTA,,,0,23,1,1,\@ImuChoicesList,0,False,False,False
+84,2,5,2,Imu Acc Threshold (0 = off),UI,g,,0,100,1,2,,25,False,False,False
+85,0,0,1,Acc LPF,LISTA,,,0,6,1,1,[ "off"; "1.5 ms"; "4.5 ms"; "12 ms"; "25 ms"; "50 ms"; "100 ms" ],2,False,False,False
+86,0,0,1,Imu DLPF,LISTA,,,0,6,1,1,[ "256 Hz"; "188 Hz"; "98 Hz"; "42 Hz"; "20 Hz"; "10 Hz"; "5 Hz"],0,False,False,False
+87,0,5,2,Hold To Pan Transition Time,UI,ms,,0,1000,25,1,,250,False,False,False
+88,0,0,1,Acc Compensation Method,LISTA,,[1;4],0,1,1,1,[ "standard"; "advanced"],1,False,False,False
+89,3,0,2,Acc Noise Level,UI,g,,0,150,1,1,,40,False,False,False
+90,2,0,2,Acc Threshold (0 = off),UI,g,,0,100,1,1,,50,False,False,False
+91,0,0,2,Acc Vertical Weight,UI,%,,0,100,5,1,,25,False,False,False
+92,0,0,2,Acc Zentrifugal Correction,UI,%,,0,100,5,1,,30,False,False,False
+93,0,0,2,Acc Recover Time,UI, ms,,0,1000,5,1,,250,False,False,False
+94,0,0,1,Imu2 Configuration,LISTA,,,0,4,1,1,[ "off"; "full"; "full xy"; "full v1"; "full v1 xy" ],0,False,False,False
+95,0,0,1,Imu2 Orientation,LISTA,,,0,23,1,1,\@ImuChoicesList,0,False,False,False
+96,0,0,1,Rc Adc LPF,LISTA,,,0,6,1,1,[ "off"; "1.5 ms"; "4.5 ms"; "12 ms"; "25 ms"; "50 ms"; "100 ms" ],0,False,False,False
+97,1,5,2,Yaw Pan Deadband Hysteresis,UI,,[4;6],0,50,1,1,,0,False,False,False
+98,0,0,1,Beep with Motors,LISTA,,[3;4],0,2,1,1,[ "off"; "basic"; "all" ],0,False,False,False
+99,0,0,2,Imu2 FeedForward LPF,LISTA,,,0,6,1,1,[ "off"; "1.5 ms"; "4 ms"; "10 ms"; "22 ms"; "46 ms"; "94 ms" ],1,False,False,False
+100,0,0,1,Gyro LPF,LISTA,,[1;1],0,6,1,1,[ "off"; "1.5 ms"; "3.0 ms"; "4.5 ms"; "6.0 ms"; "7.5 ms"; "9 ms" ],1,True,False,False
+101,0,0,2,ADC Calibration,UI,,,1000,2000,10,1,,1550,False,False,False
+102,0,5,2,Pitch Pan Expo,UI,%,,0,100,1,1,,0,False,False,False
+103,0,5,2,Roll Pan Expo,UI,%,,0,100,1,1,,0,False,False,False
+104,0,5,2,Yaw Pan Expo,UI,%,,0,100,1,1,,0,False,False,False
+105,0,0,2,Rc Hysteresis,UI,us,,0,50,1,1,,5,False,False,False
+106,1,0,2,Rc Pitch Offset,SI,,[2;4],-1200,1200,5,1,,0,False,False,False
+107,1,0,2,Rc Roll Offset,SI,,,-1200,1200,5,1,,0,False,False,False
+108,1,0,2,Rc Yaw Offset,SI,,,-1200,1200,5,1,,0,False,False,False
+109,0,0,1,Imu Mapping,LISTA,,,0,1,1,1,[ "1=IC2 ; 2=IC2#2";  "1=IC2#2 ; 2=IC2"; ],0,False,False,False
+110,0,0,2,Mavlink System ID,UI,,,0,255,1,1,,71,False,False,False
+111,0,0,2,Mavlink Component ID,UI,,,0,255,1,1,,67,False,False,False
+112,0,0,1,Mavlink Configuration,LISTA,,[3;5],0,2,1,1,[ "no heartbeat"; "emit heartbeat"; ; "heartbeat + attitude" ],0,False,False,False
+113,0,0,1,Pwm Out Control,LISTA,,,0,42,1,3,\@FunctionInputChoicesList,0,False,False,False
+114,0,0,2,Pwm Out Mid,UI,us,,900,2100,1,1,,1500,False,False,False
+115,0,0,2,Pwm Out Min,UI,us,,900,2100,10,1,,1100,False,False,False
+116,0,0,2,Pwm Out Max,UI,us,,900,2100,10,1,,1900,False,False,False
+117,0,0,2,Pwm Out Speed Limit (0 = off),UI,us/s,,0,1000,5,1,,0,False,False,False
+118,2,5,2,Yaw Pan Deadband LPF,UI,s,,0,200,5,1,,0,False,False,False
+120,0,0,1,Script1 Control,LISTA,,,0,42,1,1,\@FunctionInputChoicesList,0,False,False,False
+121,0,0,1,Script2 Control,LISTA,,,0,42,1,2,\@FunctionInputChoicesList,0,False,False,False
+122,0,0,1,Script3 Control,LISTA,,,0,42,1,3,\@FunctionInputChoicesList,0,False,False,False
+123,0,0,1,Script4 Control,LISTA,,,0,42,1,4,\@FunctionInputChoicesList,0,False,False,False
+124,0,0,128,Scripts,SCRIPT,,,0,0,0,1,,0,False,True,False
